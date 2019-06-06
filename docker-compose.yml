@@ -1,0 +1,20 @@
+version: "3"
+services:
+  site:
+    image: jekyll/jekyll
+    volumes:
+      - ./:/usr/src/app
+    working_dir: /usr/src/app
+    command: sh -c 'jekyll serve -s /usr/src/app --watch'
+    ports:
+      - 4000:4000
+    environment:
+      VIRTUAL_HOST: kmdkuk.zanasoalk.daemon.asia
+      VIRTUAL_PORT: 4000
+      LETSENCRYPT_HOST: kmdkuk.zanasoalk.daemon.asia
+      LETSENCRYPT_EMAIL: kouworld0123@gmail.com
+
+networks:
+  default:
+    external:
+      name: shared
