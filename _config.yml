@@ -14,10 +14,12 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: kouki's blog
+name: kouki's blog
 email: kouworld0123@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   koukiのポートフォリオ兼ブログ的ななにか
 baseurl: "" # the subpath of your site, e.g. /blog
+host: kmdkuk.zanasoalk.daemon.asia
 url: https://kmdkuk.zanasoalk.daemon.asia # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: kmdkuk
 github_username:  kmdkuk
