@@ -6,6 +6,7 @@ services:
       - ./:/usr/src/app
     working_dir: /usr/src/app
     command: sh -c 'jekyll serve -s /usr/src/app --watch'
+    restart: always
     environment:
       VIRTUAL_HOST: kmdkuk.zanasoalk.daemon.asia
       VIRTUAL_PORT: 4000
