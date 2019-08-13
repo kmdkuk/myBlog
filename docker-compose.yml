@@ -5,12 +5,12 @@ services:
     volumes:
       - ./:/usr/src/app
     working_dir: /usr/src/app
-    command: sh -c 'bundle install && jekyll serve'
+    command: sh -c 'jekyll serve'
     restart: always
     environment:
-      VIRTUAL_HOST: kmdkuk.zanasoalk.daemon.asia
+      VIRTUAL_HOST: blog.kmdkuk.com
       VIRTUAL_PORT: 4000
-      LETSENCRYPT_HOST: kmdkuk.zanasoalk.daemon.asia
+      LETSENCRYPT_HOST: blog.kmdkuk.com
       LETSENCRYPT_EMAIL: kouworld0123@gmail.com
 
 networks:
