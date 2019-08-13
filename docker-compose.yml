@@ -3,7 +3,7 @@ services:
   site:
     build: .
     working_dir: /usr/src/app
-    command: sh -c 'jekyll serve --no-watch --skip-initial-build'
+    command: sh -c 'jekyll serve --host 0.0.0.0 --port 4000 --no-watch --skip-initial-build'
     restart: always
     environment:
       VIRTUAL_HOST: blog.kmdkuk.com
