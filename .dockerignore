@@ -1,3 +1,9 @@
+Makefile
+Dockerfile
+docker-compose.yml
+*.md
+*.md
+*.html
 _drafts
 _posts
 images
