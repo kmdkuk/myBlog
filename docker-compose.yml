@@ -1,11 +1,9 @@
 version: "3"
 services:
   site:
-    image: jekyll/jekyll
-    volumes:
-      - ./:/usr/src/app
+    build: .
     working_dir: /usr/src/app
-    command: sh -c 'jekyll serve'
+    command: sh -c 'jekyll serve --no-watch --skip-initial-build'
     restart: always
     environment:
       VIRTUAL_HOST: blog.kmdkuk.com
