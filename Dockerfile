@@ -16,3 +16,7 @@ RUN apk update && \
 
 ADD _config.yml _config.yml
 ADD ./_site ${APP_HOME}/_site
+
+EXPOSE 4000
+
+CMD ["jekyll","serve","--host 0.0.0.0","--port 4000", "--no-watch","--skip-initial-build"]
