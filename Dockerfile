@@ -17,7 +17,7 @@ RUN apk update && \
 
 COPY . ${APP_HOME}
 
-CMD ["jekyll","build"]
+RUN bundle exec jekyll build --trace
 
 FROM nginx:alpine
 
