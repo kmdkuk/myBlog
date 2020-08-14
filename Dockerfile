@@ -9,11 +9,12 @@ COPY Gemfile Gemfile
 COPY Gemfile.lock Gemfile.lock
 
 RUN apk update && \
-    apk add --no-cache libxml2-dev curl-dev make gcc libc-dev g++ && \
+    apk add --no-cache build-base && \
     gem install bundler -v 1.17.2 && \
     bundle install -j$(getconf _NPROCESSORS_ONLN) && \
-    rm -rf /usr/local/bundle/cache/* /usr/local/share/.cache/* /var/cache/* /tmp/* && \
-    apk del libxml2-dev curl-dev make gcc libc-dev g++
+    find /usr/local/bundle -path '*/gems/*/ext/*/Makefile' -exec dirname {} \; | xargs -n1 -P$(nproc) -I{} make -C {} clean && \
+    rm -rf ${GEM_HOME}/cache /usr/local/bundle/cache/* /usr/local/share/.cache/* /var/cache/* /tmp/* && \
+    apk del build-base
 
 COPY . ${APP_HOME}
 
