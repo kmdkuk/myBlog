@@ -2,9 +2,9 @@ Makefile
 Dockerfile
 docker-compose.yml
 *.md
-*.md
-*.html
 _drafts
+_layouts
+_includes
 _posts
 images
 !_site
