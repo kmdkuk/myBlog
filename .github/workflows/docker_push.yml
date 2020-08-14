@@ -17,3 +17,4 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: kmdkuk/my-blog
           tag_with_ref: true
+          cache_froms: kmdkuk/my-blog:latest
