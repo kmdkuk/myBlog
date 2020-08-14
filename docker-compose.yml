@@ -2,9 +2,6 @@ version: "3"
 services:
   site:
     build: .
-    working_dir: /usr/src/app
-    command: sh -c 'jekyll serve --host 0.0.0.0 --port 4000 --no-watch --skip-initial-build'
     ports:
-      - "4000:4000"
+      - "4000:80"
     restart: always
-

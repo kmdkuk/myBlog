@@ -1,4 +1,4 @@
-FROM jekyll/minimal
+FROM ruby:2.6.5-alpine as builder
 
 ENV APP_HOME /usr/src/app
 ENV TZ=Asia/Tokyo
@@ -10,13 +10,19 @@ COPY Gemfile.lock Gemfile.lock
 
 RUN apk update && \
     apk add --no-cache libxml2-dev curl-dev make gcc libc-dev g++ && \
-    bundle install -j8 && \
+    gem install bundler -v 1.17.2 && \
+    bundle install -j$(getconf _NPROCESSORS_ONLN) && \
     rm -rf /usr/local/bundle/cache/* /usr/local/share/.cache/* /var/cache/* /tmp/* && \
     apk del libxml2-dev curl-dev make gcc libc-dev g++
 
-COPY _config.yml _config.yml
 COPY . ${APP_HOME}
 
-EXPOSE 4000
+CMD ["jekyll","build"]
 
-CMD ["jekyll","serve","--host 0.0.0.0","--port 4000", "--no-watch","--skip-initial-build"]
+FROM nginx:alpine
+
+COPY --from=builder /usr/src/app/_site /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
