@@ -22,11 +22,11 @@ baseurl: "" # the subpath of your site, e.g. /blog
 host: blog.kmdkuk.com
 url: https://blog.kmdkuk.com # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: kmdkuk
-github_username:  kmdkuk
+github_username: kmdkuk
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-minimal
+theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
@@ -40,5 +40,5 @@ exclude:
   - Gemfile.lock
   - Dockerfile
   - docker-compose.yml
-  - README.md 
+  - README.md
   - Makefile
