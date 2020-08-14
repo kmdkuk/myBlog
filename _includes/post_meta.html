@@ -1,0 +1,28 @@
+{% comment %}
+<!--
+Obtain time and tags that are associated with current page/post.
+-->
+{% endcomment %}
+
+{% if post %}
+{% assign date = post.date %}
+{% assign tags = post.tags %}
+{% else %}
+{% assign date = page.date %}
+{% assign tags = page.tags %}
+{% endif %}
+
+<span class="post-meta">
+  {% comment %}
+  <!--
+  Display all the tag names that link to a corresponding section of the Tags page.
+  -->
+  {% endcomment %}
+  <div class="post-tags">
+    {% for tag in tags %}
+    <a href="{{ site.baseurl }}/tags#{{ tag | slugize }}">
+      {{ tag }}
+    </a>
+    {% endfor %}
+  </div>
+</span>
