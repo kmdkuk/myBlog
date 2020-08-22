@@ -33,9 +33,12 @@ permalink: /tags
     </h3>
 
     {% for post in site.tags[tag_name] %}
-    <a href="{{ post.url | prepend: baseurl }}">
-      {{ post.title }}
-    </a>
+    <div class="post-by-tags">
+      {{ post.date | date: '%Y年%m月%d日'}}
+      <a href="{{ post.url | prepend: baseurl }}">
+        {{ post.title }}
+      </a>
+    </div>
     {% endfor %}
   </div>
   {% endfor %}
