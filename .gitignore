@@ -56,3 +56,16 @@ build-iPhoneSimulator/
 
 
 .jekyll-cache
+### https://raw.github.com/github/gitignore/3bb7b4b767f3f8df07e362dfa03c8bd425f16d32/Global/VisualStudioCode.gitignore
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
+
+
