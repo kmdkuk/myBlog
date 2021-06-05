@@ -1,12 +1,24 @@
 # myblog
-jekyllを自前hostして公開してます．
+
+github pages を利用して公開しています
 https://blog.kmdkuk.com/
 
 ## 自分用
-jekyll post "<記事タイトル>"
-で新しい記事
 
-Dockerで走らせた際に，baseurlが0.0.0.0:4000になって記事のリンクなどがビルドされてしまうため
-ローカルで`jekyll build`してから
-`docker-compose build`でbuildした\_siteをDockerImageに埋め込んで
-サーブを開始する形をとっています．．．
+### 新しい記事
+
+```shell
+bundle exec jekyll post "<記事タイトル>"
+```
+
+### 新しい drafts
+
+```shell
+bundle exec jekyll draft "<記事タイトル>"
+```
+
+### drafts を公開
+
+```shell
+bundle exec jekyll publish "DRAFT_PATH"
+```

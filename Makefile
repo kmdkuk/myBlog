@@ -1,2 +1,2 @@
 dev:
-	docker-compose -f docker-compose.dev.yml up -d
+	bundle exec jekyll serve -H 0.0.0.0
